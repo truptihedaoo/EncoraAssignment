@@ -23,10 +23,10 @@ import com.squareup.picasso.Picasso
 
 import java.util.ArrayList
 
-class Example6Adapter(
+class MainAdapter(
     private val mContext: Context,
     private val mExampleList: ArrayList<ExampleItems>
-) : RecyclerView.Adapter<Example6Adapter.ExampleViewHolder>() {
+) : RecyclerView.Adapter<MainAdapter.ExampleViewHolder>() {
     internal var mBinding: ExampleItemBinding? = null
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ExampleViewHolder {

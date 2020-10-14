@@ -20,7 +20,7 @@ class MainVM(private val mContext: Activity, internal var mBinding: ActivityMain
     ViewModel() {
 
 
-    private var mExampleAdapter: Example6Adapter? = null
+    private var mExampleAdapter: MainAdapter? = null
     private var mExampleList: ArrayList<ExampleItems>? = null
     private var mRequestQueue: RequestQueue? = null
 
@@ -52,18 +52,18 @@ class MainVM(private val mContext: Activity, internal var mBinding: ActivityMain
 
                     }
 
-                    Log.d("Reading: ", "Reading all contacts..")
+                    Log.d("Reading: ", "Reading all..")
                     val contacts = db.allData
 
                     for (cn in contacts) {
-                        val log = "Id: " + cn._id + " ,Name: " + cn.getmCreator() + " ,Phone: " +
+                        val log = "Id: " + cn._id + " ,Name: " + cn.getmCreator() + " ,image: " +
                                 cn.getmImageUrl()
                         // Writing Contacts to log
                         Log.d("NameName: ", log)
                     }
 
                     mExampleAdapter =
-                        Example6Adapter(mContext, db.allData as ArrayList<ExampleItems>)
+                        MainAdapter(mContext, db.allData as ArrayList<ExampleItems>)
                     mBinding.recyclerView.adapter = mExampleAdapter
                 } catch (e: JSONException) {
                     e.printStackTrace()
